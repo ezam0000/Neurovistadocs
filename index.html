@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeuroVista: AI-Powered Health Diagnostic Assistant</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- Add AOS library for scroll animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <div class="container">
-        <h1 data-aos="fade-down">NeuroVista: Revolutionizing Healthcare Diagnostics</h1>
+        <img src="images/blacklogo.jpg" alt="NeuroVista Logo" class="logo" data-aos="fade-down">
+        <h1 data-aos="fade-down">Revolutionizing Healthcare Diagnostics</h1>
         
         <div class="highlight" data-aos="fade-up">
             <p>NeuroVista is an AI-powered web application that assists healthcare professionals in diagnosing and treating a wide range of health conditions, leveraging advanced artificial intelligence to analyze patient data and generate multiple potential diagnostic and treatment options.</p>
@@ -110,6 +112,34 @@
         AOS.init({
             duration: 1000,
             once: true,
+        });
+    </script>
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+    <script src="js/darkMode.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    body.classList.toggle('dark-mode');
+                    const isDarkMode = body.classList.contains('dark-mode');
+                    localStorage.setItem('darkMode', isDarkMode);
+                    darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                });
+
+                // Check for saved dark mode preference
+                const savedDarkMode = localStorage.getItem('darkMode');
+                if (savedDarkMode === 'true') {
+                    body.classList.add('dark-mode');
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                }
+            } else {
+                console.error('Dark mode toggle button not found');
+            }
         });
     </script>
 </body>
