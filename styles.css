@@ -182,27 +182,40 @@ body.dark-mode .dark-mode-toggle:hover {
   background-color: #f39c12;
 }
 
-.testimonials {
+.testers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
     margin: 40px 0;
-    padding: 20px;
-    background-color: #f8f9fa;
+}
+
+.tester {
+    background-color: #fff;
     border-radius: 8px;
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.testimonial {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-left: 4px solid var(--primary-color);
+.tester:hover {
+    transform: translateY(-5px);
 }
 
-.testimonial p {
+.tester p {
     margin: 0;
     font-style: italic;
 }
 
-.testimonial strong {
+.tester strong {
     display: block;
     margin-top: 5px;
     color: var(--secondary-color);
+}
+
+.tester i {
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
