@@ -181,3 +181,28 @@ body.dark-mode .dark-mode-toggle {
 body.dark-mode .dark-mode-toggle:hover {
   background-color: #f39c12;
 }
+
+.testimonials {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.testimonial p {
+    margin: 0;
+    font-style: italic;
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 5px;
+    color: var(--secondary-color);
+}
